@@ -1,11 +1,11 @@
 import Vue from 'vue';
-// import VueResource from 'vue-resource';
+import VueResource from 'vue-resource';
 import App from './App';
 import router from './router/index.js';
 
-// import 'common/stylus/index.styl';
+import 'common/stylus/index.styl';
 
-// Vue.use(VueResource);
+Vue.use(VueResource);
 
 /* eslint-disable no-new */
 new Vue({

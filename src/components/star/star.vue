@@ -1,40 +1,43 @@
 <template>
-  <div class="star" :class="starType">
-    <span v-for="(itemClass,index) in itemClasses" :class="itemClass" class="star-item" :key="index"></span>
+  <div class="star" v-bind:class="starType">
+    <span v-for="itemClass in itemClasses" v-bind:class="itemClass" class="star-item"
+     track-by="$index">
+
+    </span>
   </div>
 </template>
 
-<script type="text/ecmascript-6">
-  const LENGTH = 5;
-  const CLS_ON = 'on';
-  const CLS_HALF = 'half';
-  const CLS_OFF = 'off';
+<script>
+const LENGTH = 5;
+const CLS_ON = 'on';
+const CLS_HALF = 'half';
+const CLS_OFF = 'off';
 
-  export default {
-    props: {
-      size: {
+  export default{
+    props:{
+      size:{
         type: Number
       },
-      score: {
+      score:{
         type: Number
       }
     },
-    computed: {
-      starType() {
-        return 'star-' + this.size;
+    computed:{
+      starType(){
+        return 'star-'+this.size
       },
       itemClasses() {
         let result = [];
-        let score = Math.floor(this.score * 2) / 2;
-        let hasDecimal = score % 1 !== 0;
+        let score = Math.floor(this.score*2)/2;
+        let hasDecimal = score % 1 !==0; //取余
         let integer = Math.floor(score);
-        for (let i = 0; i < integer; i++) {
+        for(let i = 0;i<integer;i++){
           result.push(CLS_ON);
         }
-        if (hasDecimal) {
+        if(hasDecimal){
           result.push(CLS_HALF);
         }
-        while (result.length < LENGTH) {
+        while(result.length<LENGTH){
           result.push(CLS_OFF);
         }
         return result;
