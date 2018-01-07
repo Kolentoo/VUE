@@ -83,7 +83,6 @@
     methods:{
       showDetail(){
         this.detailShow = true
-        console.log(this)
       },
         hideDetail(){
         this.detailShow = false
