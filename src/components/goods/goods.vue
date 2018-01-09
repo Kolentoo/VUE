@@ -31,13 +31,16 @@
                   <span class="now">￥{{food.price}}</span>
                   <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                 </div>
+                <div class="cartcontrol-wrapper">
+                  <cartcontrol :food="food"></cartcontrol>
+                </div>
               </div>
             </li>
           </ul>
         </li>
       </ul>
     </div>
-    <shopcart :delivery-price="seller.deliveryPrice" 
+    <shopcart ref="shopcart" :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" 
     :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
@@ -45,6 +48,7 @@
 <script>
   import BScroll from 'better-scroll';
   import shopcart from 'components/shopcart/shopcart';
+  import cartcontrol from 'components/cartcontrol/cartcontrol';
   const ERROR_OK = 0;
   export default{
     props:{
@@ -69,6 +73,17 @@
           }
         }
         return 0;
+      },
+      selectFoods(){
+        let foods = [];
+        this.goods.forEach((good)=>{
+          good.foods.forEach((food)=>{
+            if(food.count){
+              foods.push(food);
+            }
+          });
+        });
+        return foods;
       }
     },
     created(){
@@ -81,6 +96,7 @@
             this._calculateHeight();
           });
         }
+        console.log(this.goods)
       });
       this.classMap = ['decrease','discount','special','invoice','guanantee']
     },
@@ -90,17 +106,20 @@
             click:true
           });
           this.foodsScroll = new BScroll(this.$refs.foodsWrapper,{
+            click:true,
             probeType:3
           });
           this.foodsScroll.on('scroll',(pos)=>{
             this.scrollY= Math.abs(Math.round(pos.y));
           });
       },
+      _drop(target){
+        this.$refs.shopcart.drop(target);
+      },
       _calculateHeight(){
         let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hock');
         let height = 0;
         this.listHeight.push(height);
-        console.log(foodList.length)
         for(let i = 0;i<foodList.length;i++){
           let item = foodList[i];
           height+=item.clientHeight;
@@ -115,7 +134,13 @@
       }
     },
     components:{
-      shopcart
+      shopcart,
+      cartcontrol
+    },
+    events:{
+      'cart.add'(target) {
+        this._drop(traget);
+      }
     }
 
   };
