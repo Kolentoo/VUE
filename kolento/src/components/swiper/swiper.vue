@@ -1,15 +1,13 @@
 <template>
-  <div class="banner">
-
+  <div class="swiper">
+    我是swiper
   </div>
 </template>
 
 <script>
-    export default{
-        
-    }
+  export default{}
 </script>
 
 <style>
-
+  
 </style>
