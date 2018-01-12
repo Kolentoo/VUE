@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <swiper></swiper>
+    <div class="banner">
+    </div>
   </div>
 </template>
 
 <script>
-  import Swiper from './components/swiper/swiper'
-  export default{
-    components: {
-      'swiper': Swiper
-    }
-  }
+
 </script>
 
 <style>
-
+  .banner {background:url(images/banner.jpg) no-repeat center 65%;background-size:cover;height:800px;}
+  
 </style>
