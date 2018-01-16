@@ -6,6 +6,15 @@ var utils = require('./utils')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var glob = require('glob')
+
+const HOST = process.env.HOST
+const PORT = process.env.PORT && Number(process.env.PORT)
+
+const appData = require('../data.json')
+const home = appData.home
+const channel = appData.channel
+const other = appData.other
+
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
@@ -16,6 +25,50 @@ module.exports = merge(baseWebpackConfig, {
   },
   // eval-source-map is faster for development
   devtool: '#eval-source-map',
+  devServer: {
+    // 接口部分
+    before(app) {
+      app.get('/api/home', function(req, res) {
+        res.json({
+          errno: 0,
+          data: home
+        })
+      });
+      app.get('/api/channel', function(req, res) {
+        res.json({
+          errno: 0,
+          data: channel
+        })
+      });
+      app.get('/api/other', function(req, res) {
+        res.json({
+          errno: 0,
+          data: other
+        })
+      });
+    },
+    clientLogLevel: 'warning',
+    historyApiFallback: {
+      rewrites: [
+        { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
+      ],
+    },
+    hot: true,
+    contentBase: false, // since we use CopyWebpackPlugin.
+    compress: true,
+    host: HOST || config.dev.host,
+    port: PORT || config.dev.port,
+    open: config.dev.autoOpenBrowser,
+    overlay: config.dev.errorOverlay
+      ? { warnings: false, errors: true }
+      : false,
+    publicPath: config.dev.assetsPublicPath,
+    proxy: config.dev.proxyTable,
+    quiet: true, // necessary for FriendlyErrorsPlugin
+    watchOptions: {
+      poll: config.dev.poll,
+    }
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.dev.env
