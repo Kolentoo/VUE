@@ -1,11 +1,11 @@
 {
   "home": {
     "navigation":[
-      {"label":"Discover","url":"/other"},
-      {"label":"Zone","url":"/other"},
-      {"label":"Video","url":"/other"},
-      {"label":"Weibo","url":"/other"},
-      {"label":"About","url":"/other"}
+      {"label":"Discover","url":"/Discover"},
+      {"label":"Zone","url":"/Zone"},
+      {"label":"Video","url":"/Video"},
+      {"label":"Weibo","url":"/Weibo"},
+      {"label":"About","url":"/About"}
     ]
   },
   "channel": [
