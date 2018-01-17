@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import navigation from './components/navigation/navigation'
+  import navigation from '../components/navigation/navigation'
   export default{
     data(){
       return{
@@ -65,7 +65,7 @@
 
 <style>
   body,html{overflow: hidden;}
-  .banner {background:url(public/images/banner.jpg) no-repeat center 65%;background-size:cover;transition:all ease 0.5s;position: relative;margin-top: 0;}
+  .banner {background:url(../public/images/banner.jpg) no-repeat center 65%;background-size:cover;transition:all ease 0.5s;position: relative;margin-top: 0;}
   .banner h1{padding-top: 320px;text-align: center;color:#fff;font-size: 55px;font-weight:bold;}
   .banner h2{font-size: 40px;text-align: center;color:#fff;font-weight:bold;}
   .bannerChange {margin-top: -550px;}

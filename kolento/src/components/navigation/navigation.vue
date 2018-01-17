@@ -1,9 +1,10 @@
 <template>
     <div class="navigation clearfix">
         <ul class="nav-con clearfix fl">
-            <li class="nav-list fl" v-for="(item,index) in menus">
-                <a class="list1" href="">{{item}}</a>
-                <a class="list2" href="">{{item}}</a>
+            <li class="nav-list fl" v-for="(item,index) in menus" @click="other(item.url)">
+               <span class="a">
+                {{item.label}}
+               </span>
             </li>
         </ul>
         <div class="menu fr">
@@ -67,6 +68,9 @@
                 this.$emit('bannerback');
                 this.show1=true;
                 this.show2=false;
+            },
+            other(url){
+                this.$router.push(url);
             }
         }
     }
@@ -77,7 +81,7 @@
     .nav-con {margin-left: 40px;}
     .login {margin-right: 40px;}
     .navigation li {width: 100px;text-align: center;cursor:pointer;}
-    .navigation li a{color:#fff;transition:all ease 0.5s;display: block;}
+    .navigation li .a{color:#fff;transition:all ease 0.5s;display: block;}
     .navigation li .list1 {margin-top: 0;opacity: 1;}
     .navigation li .list2 {opacity: 0;}
     .navigation li:hover .list1 {margin-top: -33px;opacity: 0;}
