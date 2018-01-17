@@ -2,9 +2,8 @@
     <div class="navigation clearfix">
         <ul class="nav-con clearfix fl">
             <li class="nav-list fl" v-for="(item,index) in menus" @click="other(item.url)">
-               <span class="a">
-                {{item.label}}
-               </span>
+               <p class="list1">{{item.label}}</p>
+               <p class="list2">{{item.label}}</p>
             </li>
         </ul>
         <div class="menu fr">
@@ -80,8 +79,8 @@
     .navigation {font-size: 22px;padding-top: 25px;}
     .nav-con {margin-left: 40px;}
     .login {margin-right: 40px;}
-    .navigation li {width: 100px;text-align: center;cursor:pointer;}
-    .navigation li .a{color:#fff;transition:all ease 0.5s;display: block;}
+    .navigation li {text-align: center;cursor:pointer;padding:0 20px;}
+    .navigation li p{color:#fff;transition:all ease 0.5s;display: block;}
     .navigation li .list1 {margin-top: 0;opacity: 1;}
     .navigation li .list2 {opacity: 0;}
     .navigation li:hover .list1 {margin-top: -33px;opacity: 0;}

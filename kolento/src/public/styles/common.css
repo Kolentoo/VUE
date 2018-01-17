@@ -1,1 +1,6 @@
 .font {font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;}
+input {border:none;}
+::-webkit-input-placeholder {color:#666;}
+:-moz-placeholder {color:#666;}
+::-moz-placeholder {color:#666;}
+:-ms-input-placeholder {color:#666;}
