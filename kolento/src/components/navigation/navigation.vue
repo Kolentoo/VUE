@@ -14,7 +14,6 @@
 </template>
 
 <script>
-    import axios from 'axios';
     export default{
         data(){
             return{
@@ -31,7 +30,7 @@
         },
         created(){
             let self = this;
-            axios.get('/api/home').then(function(response){
+            this.$axios.get('/api/home').then((response)=>{
                 if(response.data.errno===0){
                     self.items = response.data;
                     self.menus = self.items.data.navigation;
