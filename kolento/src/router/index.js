@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import index from '@/pages/index'
 import video from '@/pages/video'
 import other from '@/pages/other'
+import pics from '@/pages/pics'
 
 Vue.use(Router)
 
@@ -19,9 +20,9 @@ export default new Router({
       component: index
     },
     {
-      path: '/other',
-      name: 'other',
-      component: other
+      path: '/pics',
+      name: 'pics',
+      component: pics
     },
     {
       path: '/video',

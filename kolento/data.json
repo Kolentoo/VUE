@@ -5,7 +5,7 @@
       {"label":"Discover","url":"/discover"},
       {"label":"Zone","url":"/zone"},
       {"label":"Video","url":"/video"},
-      {"label":"Weibo","url":"/weibo"},
+      {"label":"Pics","url":"/Pics"},
       {"label":"About","url":"/about"}
     ]
   },
