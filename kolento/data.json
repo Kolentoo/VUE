@@ -1,11 +1,12 @@
 {
   "home": {
     "navigation":[
-      {"label":"Discover","url":"/Discover"},
-      {"label":"Zone","url":"/Zone"},
-      {"label":"Video","url":"/Video"},
-      {"label":"Weibo","url":"/Weibo"},
-      {"label":"About","url":"/About"}
+      {"label":"Kolento","url":"/index"},
+      {"label":"Discover","url":"/discover"},
+      {"label":"Zone","url":"/zone"},
+      {"label":"Video","url":"/video"},
+      {"label":"Pics","url":"/Pics"},
+      {"label":"About","url":"/about"}
     ]
   },
   "channel": {
