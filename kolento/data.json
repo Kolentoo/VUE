@@ -10,12 +10,12 @@
   },
   "channel": {
     "video":[
-      {"vname":"动漫歌曲大对决，终极音乐盛宴!","vurl":"https://www.bilibili.com/video/av564865/","vimg":"../public/images/video1.jpg"},
-      {"vname":"Letter song致十年后的我","vurl":"https://www.bilibili.com/video/av635107/","vimg":"../public/images/video2.jpg"},
-      {"vname":"动漫歌曲AB对决第二鼎,一小时的音乐盛宴","vurl":"https://www.bilibili.com/video/av846606/","vimg":"../public/images/video3.jpg"},
-      {"vname":"致二次元，触碰泪点","vurl":"https://www.bilibili.com/video/av873862/","vimg":"../public/images/video4.jpg"},
-      {"vname":"火影忍者的羁绊【曾有你的森林】","vurl":"https://www.bilibili.com/video/av1736747/","vimg":"../public/images/video5.jpg"},
-      {"vname":"MARRY CHRISTMAS，MY FANSTIC BABY!!!","vurl":"https://www.bilibili.com/video/av7663265/","vimg":"../public/images/video6.jpg"}
+      {"vname":"动漫歌曲大对决，终极音乐盛宴!","vurl":"https://www.bilibili.com/video/av564865/","vimg":"http://m.qpic.cn/psb?/V14TUbva4XJNhT/3as.Ix4IYhnx*DXx.2ZZfHJjtyjqIoI61zTPp1UGcFU!/b/dPIAAAAAAAAA&bo=wgEYAcIBGAERCT4!&rf=viewer_4"},
+      {"vname":"Letter song致十年后的我","vurl":"https://www.bilibili.com/video/av635107/","vimg":"http://m.qpic.cn/psb?/V14TUbva4XJNhT/*hDWNJGs6nIljQywDeEAzOmjNRLlRsA7l2qwtqrB7ik!/b/dPIAAAAAAAAA&bo=wgEYAcIBGAERGS4!&rf=viewer_4"},
+      {"vname":"动漫歌曲AB对决第二鼎,一小时的音乐盛宴","vurl":"https://www.bilibili.com/video/av846606/","vimg":"http://m.qpic.cn/psb?/V14TUbva4XJNhT/pvWrrwJUkEO8t0IcNqnyeT3d5gLkEAKDR9GJn0kF5F4!/b/dFsBAAAAAAAA&bo=wgEYAcIBGAERGS4!&rf=viewer_4"},
+      {"vname":"致二次元，触碰泪点","vurl":"https://www.bilibili.com/video/av873862/","vimg":"http://m.qpic.cn/psb?/V14TUbva4XJNhT/5SzCD.35f4OO4T4x04ExBqz0MVWnMCTE7MsAe5KJ0Yc!/b/dF8BAAAAAAAA&bo=wgEYAcIBGAERGS4!&rf=viewer_4"},
+      {"vname":"火影忍者的羁绊【曾有你的森林】","vurl":"https://www.bilibili.com/video/av1736747/","vimg":"http://m.qpic.cn/psb?/V14TUbva4XJNhT/wbm5c9MllxgwOU3a9mRqKg9H*p5Vm*wmj587aCGM8Jw!/b/dPIAAAAAAAAA&bo=wgEYAcIBGAERGS4!&rf=viewer_4"},
+      {"vname":"MARRY CHRISTMAS，MY FANSTIC BABY!!!","vurl":"https://www.bilibili.com/video/av7663265/","vimg":"http://m.qpic.cn/psb?/V14TUbva4XJNhT/FYrCZHHo52oxXZBW*zPonRH2NDRH*TzhwBAT1ZJ2tWc!/b/dGgBAAAAAAAA&bo=wgEYAQAAAAADB*g!&rf=viewer_4"}
     ]
   },
   "other": [

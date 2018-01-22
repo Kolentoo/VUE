@@ -19,9 +19,15 @@
         <h4>Discover what’s trending according to photographers around the world.</h4>
       </div>
       <div class="video-group">
-        <ul class="video-con clearfix">
-          <li class="video-list fl" v-for="(video,index) in videos">
-            <img class="vm block" :src="video.vimg" alt="">
+        <ul class="video-con">
+          <li class="video-list pointer" v-for="(video,index) in videos">
+            <a :href="video.vurl" class="block list-con" target="_blank">
+              <img class="vm block" :src="video.vimg" alt="">
+              <div class="mask">
+                <img class="video-icon" src="../public/images/video-icon.png" alt="">
+              </div>
+            </a>
+            <p class="vname">{{video.vname}}</p>
           </li>
         </ul>
       </div>
@@ -66,6 +72,7 @@
 
 <style>
   ::-webkit-scrollbar{width:0px}
+  .video {padding-bottom: 120px;}
   .navigation {position: absolute;top: 0;left: 0;width: 100%;z-index:100;}
   .video-top {width: 100%;background-size: cover;overflow: hidden;margin-top: 0;transition:all ease 0.5s;}
   .bannerChange {margin-top: -450px;}
@@ -78,10 +85,17 @@
   .search-box input{background: rgba(255,255,255,0.7);border-radius:10px;width: 100%;height: 75px;line-height: 75px;
   color:#333;font-size:24px;padding-left: 30px;outline:none;text-align: center;}
   .search-box .sbtn {position: absolute;width:34px;cursor: pointer;top: 3px;right: -20px;padding:20px;}
-  .content-title {margin-top: 65px;}
+  .content-title {margin-top: 90px;}
   .content-title h3{color:#333;font-size: 36px;}
   .content-title h4{font-size: 18px;margin-top: 5px;}
-  .video-list {width: 400px;height: 300px;}
-  .video-list embed{width: 100%;height: 100%;}
+  .video-con {display: flex;justify-content:center;width: 80%;margin:50px auto 0;flex-wrap:wrap;}
+  .video-list {width: 47%;margin:40px 1.5% 0;}
+  .list-con {position: relative;}
+  .video-list img{width: 100%;height: 100%;}
+  .video-list .mask {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);display: flex;
+  justify-content:center;align-items:center;}
+  .video-list .video-icon {width: 60px;height: 60px;}
+  .video-list .vname {font-size: 24px;padding-top: 5px;}
+  
 
 </style>
