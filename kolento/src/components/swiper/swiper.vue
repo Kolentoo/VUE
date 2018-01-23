@@ -24,14 +24,17 @@
           // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
           notNextTick: true,
           // swiper configs 所有的配置同swiper官方api配置
-          autoplay: 3000,
+          autoplay: {
+            delay: 3000,//5秒切换一次
+          },
           // direction : 'vertical',
           // effect: 'coverflow',
           grabCursor: true,
           // setWrapperSize: true,
           // autoHeight: true,
-          // paginationType:"bullets",
-          pagination: '.swiper-pagination',
+          pagination: {
+              el: '.swiper-pagination',
+          },
           paginationClickable: true,
           prevButton: '.swiper-button-prev',
           nextButton: '.swiper-button-next',
@@ -76,7 +79,10 @@
 
 <style>
   .swiper-container {width:100%;}
-  .banner0 {background:url(banner1.jpg) no-repeat center center;background-size:cover;height:960px;}
-  .banner1 {background:url(banner2.jpg) no-repeat center center;background-size:cover;height:960px;}
-  .banner2 {background:url(banner3.jpg) no-repeat center center;background-size:cover;height:960px;}
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin:0 0.6rem;}
+  .swiper-pagination-bullet {width: 1.3rem;height: 1.3rem;}
+  .swiper-pagination-bullet-active {background: #fff;}
+  .banner0 {background:url(banner0.jpg) no-repeat center center;background-size:cover;height:30rem;}
+  .banner1 {background:url(banner1.jpg) no-repeat center center;background-size:cover;height:30rem;}
+  .banner2 {background:url(banner2.jpg) no-repeat center center;background-size:cover;height:30rem;}
 </style>  

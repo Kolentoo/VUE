@@ -1,12 +1,10 @@
 {
   "home": {
-    "navigation":[
-      {"label":"Kolento","url":"/index"},
-      {"label":"Discover","url":"/discover"},
-      {"label":"Zone","url":"/zone"},
-      {"label":"Video","url":"/video"},
-      {"label":"Pics","url":"/Pics"},
-      {"label":"About","url":"/about"}
+    "menu":[
+      {"label":"实战","url":"/practice"},
+      {"label":"路径","url":"/route"},
+      {"label":"猿问","url":"/question"},
+      {"label":"手记","url":"/record"}
     ]
   },
   "channel": {
