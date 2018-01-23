@@ -2,7 +2,15 @@
 <template>
   <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
     <!-- slides -->
-    <swiper-slide v-for="(slide,index) in slides" :key="index" :class="'banner'+index">{{slide}}</swiper-slide>
+    <swiper-slide v-for="(slide,index) in slides" :key="index" :class="'banner'+index">
+        <ul class="sec-con">
+            <li class="sec-list clearfix" v-for="sec in secs">
+                <a href="" class="block">
+                    <img class="pro-pic vm fl" src="" alt="">
+                </a>
+            </li>
+        </ul>
+    </swiper-slide>
     <!-- Optional controls -->
     <div class="swiper-pagination"  slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev"></div>
