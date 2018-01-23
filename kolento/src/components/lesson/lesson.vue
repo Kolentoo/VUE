@@ -1,21 +1,23 @@
 <!-- The ref attr used to find the swiper instance -->
 <template>
-  <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+  <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback" class="swiper-lesson">
     <!-- slides -->
-    <swiper-slide v-for="(slide,index) in slides" :key="index" :class="'banner'+index">
+    <swiper-slide v-for="(slide,index) in slides" :key="index">
         <ul class="sec-con">
             <li class="sec-list clearfix" v-for="sec in secs">
-                <a href="" class="block">
-                    <img class="pro-pic vm fl" src="" alt="">
+                <a href="" class="block clearfix">
+                    <img class="pro-pic vm fl" :src="sec.pic" alt="">
+                    <div class="detail fl">
+                      <p class="name">{{sec.name}}</p>
+                      <p class="num">{{sec.num}}</p>
+                      <p class="price">{{sec.price}}</p>
+                    </div>
                 </a>
             </li>
         </ul>
     </swiper-slide>
     <!-- Optional controls -->
     <div class="swiper-pagination"  slot="pagination"></div>
-    <div class="swiper-button-prev" slot="button-prev"></div>
-    <div class="swiper-button-next" slot="button-next"></div>
-    <div class="swiper-scrollbar"   slot="scrollbar"></div>
   </swiper>
 </template>
 
@@ -25,16 +27,17 @@
     data() {
       return {
         slides: [
-          1,2,3
+          1,2
         ],
+        secs:[],
         swiperOption: {
           // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
           // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
           notNextTick: true,
           // swiper configs 所有的配置同swiper官方api配置
-          autoplay: {
-            delay: 3000,//5秒切换一次
-          },
+          // autoplay: {
+          //   delay: 3000,//5秒切换一次
+          // },
           // direction : 'vertical',
           // effect: 'coverflow',
           grabCursor: true,
@@ -43,9 +46,9 @@
           pagination: {
               el: '.swiper-pagination',
           },
-          paginationClickable: true,
-          prevButton: '.swiper-button-prev',
-          nextButton: '.swiper-button-next',
+          // paginationClickable: true,
+          // prevButton: '.swiper-button-prev',
+          // nextButton: '.swiper-button-next',
           // scrollbar:'.swiper-scrollbar',
           // mousewheelControl: true,
           // observeParents: true,
@@ -80,18 +83,24 @@
       }
     },
     created(){
-      // console.log(this.key);
+      this.$axios.get('/api/home').then((res)=>{
+        this.secs=res.data.data.sec.recommend;
+        console.log(this.secs);
+      });
     }
   }
 </script>
 
 <style>
-  .swiper-container {width:100%;}
-  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin:0 0.6rem;}
-  .swiper-pagination-bullet {width: 1.3rem;height: 1.3rem;}
-  .swiper-pagination-bullet-active {background: #fff;}
-  .banner0 {background:url(banner0.jpg) no-repeat center center;background-size:cover;height:30rem;}
-  .banner1 {background:url(banner1.jpg) no-repeat center center;background-size:cover;height:30rem;}
-  .banner2 {background:url(banner2.jpg) no-repeat center center;background-size:cover;height:30rem;}
-  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {bottom: 1rem;}
+  .swiper-lesson .sec-list {margin:3rem 0;}
+  .swiper-lesson .pro-pic {width: 40%;border-radius:1.2rem;}
+  .swiper-lesson .detail {margin-left: 5%;width: 55%;}
+  .swiper-lesson .name {font-size: 3rem;color:#333;overflow:hidden;text-overflow:ellipsis;display:-webkit-box; -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; }
+  .swiper-lesson .num {font-size: 2.4rem;color:#333;}
+  .swiper-lesson .price {font-size: 2.4rem;color:#333;}
+  .swiper-lesson .swiper-pagination-bullet {width: 1.3rem;height: 1.3rem;margin:0 0.8rem;transition:all ease 0.5s;}
+  .swiper-lesson .swiper-pagination-bullet-active {background: #D9DDE1;width: 6rem;border-radius:1rem;}
+  .swiper-lesson .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 0;}
 </style>  

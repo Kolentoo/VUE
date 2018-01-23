@@ -1,6 +1,6 @@
 <!-- The ref attr used to find the swiper instance -->
 <template>
-  <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+  <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback" class="swiper-banner">
     <!-- slides -->
     <swiper-slide v-for="(slide,index) in slides" :key="index" :class="'banner'+index">{{slide}}</swiper-slide>
     <!-- Optional controls -->
@@ -78,12 +78,11 @@
 </script>
 
 <style>
-  .swiper-container {width:100%;}
-  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin:0 0.6rem;}
-  .swiper-pagination-bullet {width: 1.3rem;height: 1.3rem;}
-  .swiper-pagination-bullet-active {background: #fff;}
-  .banner0 {background:url(banner0.jpg) no-repeat center center;background-size:cover;height:30rem;}
-  .banner1 {background:url(banner1.jpg) no-repeat center center;background-size:cover;height:30rem;}
-  .banner2 {background:url(banner2.jpg) no-repeat center center;background-size:cover;height:30rem;}
-  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {bottom: 1rem;}
+  .swiper-banner .swiper-container {width:100%;}
+  .swiper-banner .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin:0 0.6rem;}
+  .swiper-banner .swiper-pagination-bullet {width: 1.3rem;height: 1.3rem;margin:0 0.4rem;}
+  .swiper-banner .swiper-pagination-bullet-active {background: #fff;}
+  .swiper-banner .banner0 {background:url(banner0.jpg) no-repeat center center;background-size:cover;height:30rem;}
+  .swiper-banner .banner1 {background:url(banner1.jpg) no-repeat center center;background-size:cover;height:30rem;}
+  .swiper-banner .banner2 {background:url(banner2.jpg) no-repeat center center;background-size:cover;height:30rem;}
 </style>  

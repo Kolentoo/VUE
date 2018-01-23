@@ -49,4 +49,7 @@
     .menu-list .p1 {font-size: 2.8rem;line-height: 2.8rem;}
     .menu-list:first-child .iconfont,.menu-list:nth-child(2) .iconfont {color:#F90;font-size: 4.6rem;}
     .menu-list:last-child .iconfont,.menu-list:nth-child(3) .iconfont {color:#738BE5;font-size: 4.9rem;}
+    .lesson-swiper .swiper-pagination-bullet {margin:0 0.6rem;width: 1.3rem;height: 1.3rem;bottom: 1rem;
+    transition:all ease 0.5s;}
+    .lesson-swiper .swiper-pagination-bullet-active {background: #B7BBBF;width: 30rem;border-radius:1rem;}
 </style>

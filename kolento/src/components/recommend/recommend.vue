@@ -22,16 +22,21 @@
                     </a>
                 </li>
             </ul>
+            <lesson></lesson>
         </div>
     </div>
 </template>
 
 <script>
+    import lesson from '../lesson/lesson'
     export default{
         data(){
             return{
                 mains:[]
             }
+        },
+        components:{
+            lesson
         },
         created(){
             this.$axios.get('/api/home').then((res)=>{
@@ -50,7 +55,7 @@
     .icon-jiantou {font-size: 2.4rem;}
     .main-con {display: flex;justify-content:center;margin-top: 3rem;}
     .main-list {padding:2.5rem;border-radius:1.2rem;width: 48%;position: relative;overflow: hidden;}
-    .main-list .pic {width: 15rem;height: 15rem;position: absolute;bottom: -5.2rem;right: 0.5rem;}
+    .main-list .pic {width: 15rem;height: 15rem;position: absolute;bottom: -7rem;right: 0.5rem;}
     .main-list:first-child {background: #00c2d1;margin-right: 3rem;}
     .main-list:last-child {background: #0070bb;}
     .main-list:first-child .pic1 {display: block;}
