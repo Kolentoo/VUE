@@ -79,7 +79,6 @@
 
 <style>
   .swiper-banner .swiper-container {width:100%;}
-  .swiper-banner .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin:0 0.6rem;}
   .swiper-banner .swiper-pagination-bullet {width: 1.3rem;height: 1.3rem;margin:0 0.4rem;}
   .swiper-banner .swiper-pagination-bullet-active {background: #fff;}
   .swiper-banner .banner0 {background:url(banner0.jpg) no-repeat center center;background-size:cover;height:30rem;}

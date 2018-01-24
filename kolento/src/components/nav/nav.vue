@@ -2,10 +2,10 @@
     <div class="nav clearfix">
         <a class="logo block fl" href="/index"><img class="logo-pic vm" src="./immoic.png" alt=""></a>
         <div class="label fl">
-            <input class="search" type="text" placeholder="请输入关键字">
-            <img class="search-icon" src="./search-icon.jpg" alt="">
+            <input class="search" type="text" placeholder="请输入关键字" @keyup.enter="search">
+            <img class="search-icon" src="./search-icon.jpg" alt="" @click="search">
         </div>
-        <a class="download fr" href="">下载客户端</a>
+        <p class="download fr" @click="download">下载客户端</p>
     </div>
 </template>
 
@@ -18,6 +18,14 @@
         },
         created(){
 
+        },
+        methods:{
+            download(){
+                alert('没客户端')
+            },
+            search(){
+                alert('你想搜啥')
+            }
         }
     }
 </script>
@@ -32,5 +40,5 @@
     .search-icon {width: 3.4rem;position: absolute;top: 1rem;right: 2rem;}
     .download {width: 15rem;border: 1px solid #71777D;color:#71777D;font-size: 2.4rem;text-align: center;border-radius:0.8rem;
     height: 5rem;line-height: 5rem;transition:all ease 0.5s;}
-    .download:hover {background: #71777D;color:#fff;}
+    /*.download:hover {background: #71777D;color:#fff;}*/
 </style>
