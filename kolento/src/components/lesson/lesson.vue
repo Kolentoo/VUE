@@ -2,15 +2,16 @@
 <template>
   <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback" class="swiper-lesson">
     <!-- slides -->
-    <swiper-slide v-for="(slide,index) in slides" :key="index">
+    <swiper-slide v-for="(i,index) in 2" :key="index">
+        
         <ul class="sec-con">
-            <li class="sec-list clearfix" v-for="sec in secs">
+            <li class="sec-list clearfix" v-for="item in sec">
                 <a href="" class="block clearfix">
-                    <img class="pro-pic vm fl" :src="sec.pic" alt="">
+                    <img class="pro-pic vm fl" :src="item.pic" alt="">
                     <div class="detail fl">
-                      <p class="name">{{sec.name}}</p>
-                      <p class="num">{{sec.num}}</p>
-                      <p class="price">{{sec.price}}</p>
+                      <p class="name">{{item.name}}</p>
+                      <p class="num">{{item.num}}</p>
+                      <p class="price">{{item.price}}</p>
                     </div>
                 </a>
             </li>
@@ -24,12 +25,12 @@
 <script>
   export default {
     name: 'carrousel',
+    props:['sort','sec'],
     data() {
       return {
         slides: [
           1,2
         ],
-        secs:[],
         swiperOption: {
           // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
           // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
@@ -53,7 +54,7 @@
           // mousewheelControl: true,
           // observeParents: true,
           parallax:true,
-          loop:false
+          loop:true
           // if you need use plugins in the swiper, you can config in here like this
           // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
           // debugger: true,
@@ -81,17 +82,12 @@
     methods: {
       callback() {
       }
-    },
-    created(){
-      this.$axios.get('/api/home').then((res)=>{
-        this.secs=res.data.data.sec.recommend;
-        console.log(this.secs);
-      });
     }
   }
 </script>
 
 <style>
+  h4{font-size: 20rem;}
   .swiper-lesson .sec-list {margin:3rem 0;}
   .swiper-lesson .pro-pic {width: 40%;border-radius:1.2rem;}
   .swiper-lesson .detail {margin-left: 5%;width: 55%;}
@@ -101,6 +97,6 @@
   .swiper-lesson .price {font-size: 2.4rem;color:#333;}
   .swiper-lesson .swiper-pagination-bullet {width: 1.3rem;height: 1.3rem;margin:0 0.8rem;transition:all ease 0.5s;}
   .swiper-lesson .swiper-pagination-bullet-active {background: #D9DDE1;width: 6rem;border-radius:1rem;}
-  .swiper-lesson .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  .swiper-lesson .swiper-pagination-fraction, .swiper-lesson .swiper-pagination-custom, .swiper-lesson .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: 0;}
 </style>  

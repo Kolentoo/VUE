@@ -19,15 +19,14 @@
         created(){
             this.$axios.get('/api/home').then((res)=>{
                 this.bottoms=res.data.data.us;
-                console.log(this.bottoms);
             });
         }
     }
 </script>
 
 <style scoped>
-    .bottom {position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;height: 10rem;border-right: 0.1rem solid #ccc;
-    z-index:100;box-shadow:0 0 0.5rem rgba(0,0,0,0.4);}
+    .bottom {position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;height: 10rem;border-top: 0.1rem solid #ccc;;
+    z-index:100;box-shadow:0 0 0.1rem rgba(0,0,0,0.1);}
     .bottom-con {margin-top: 1rem;}
     .bottom-list {width: 25%;text-align: center;}
     .iconfont {font-size: 3.8rem;line-height: 5.2rem;}

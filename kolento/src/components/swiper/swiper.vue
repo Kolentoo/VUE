@@ -23,6 +23,7 @@
           // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
           // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
           notNextTick: true,
+          slidesPerView:1,
           // swiper configs 所有的配置同swiper官方api配置
           autoplay: {
             delay: 3000,//5秒切换一次
@@ -64,7 +65,7 @@
     mounted() {
       // current swiper instance
       // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-      console.log('this is current swiper instance object', this.swiper)
+      // console.log('this is current swiper instance object', this.swiper)
       // this.swiper.slideTo(3, 1500, false)
     },
     methods: {
@@ -84,4 +85,5 @@
   .swiper-banner .banner0 {background:url(banner0.jpg) no-repeat center center;background-size:cover;height:30rem;}
   .swiper-banner .banner1 {background:url(banner1.jpg) no-repeat center center;background-size:cover;height:30rem;}
   .swiper-banner .banner2 {background:url(banner2.jpg) no-repeat center center;background-size:cover;height:30rem;}
+  .swiper-banner .swiper-pagination-fraction,.swiper-banner .swiper-pagination-custom,.swiper-banner .swiper-container-horizontal > .swiper-pagination-bullets {bottom: 1rem;}
 </style>  

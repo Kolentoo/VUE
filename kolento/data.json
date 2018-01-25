@@ -6,40 +6,96 @@
       {"label":"猿问","url":"/question","icon":"icon-tiwen"},
       {"label":"手记","url":"/record","icon":"icon-suishouji"}
     ],
-    "main":{
-      "recommend":[
-        {"name":"React.JS","desc":"Redux+React Router+Node.js全栈开发","price":"388","pic":"public/images/recommend1.png"},
-        {"name":"Python","desc":"全网最热Python3入门+进阶 更快上手实际开发","price":"366","pic":"public/images/recommend2.png"}
-      ]
-    },
-    "sec":{
-      "recommend":[
+    "intro":[
         {
-          "name":"Java企业级电商项目架构演进之路  Tomcat集群与Redis分布式",
-          "pic":"http://img1.sycdn.imooc.com/szimg/5a16336900014ca405400300-360-202.jpg",
-          "num":"高级 · 539人在学",
-          "price":"￥399.00"
+          "first":[
+            {"name":"React.JS","desc":"Redux+React Router+Node.js全栈开发","price":"388","pic":"public/images/recommend1.png"},
+            {"name":"Python","desc":"全网最热Python3入门+进阶 更快上手实际开发","price":"366","pic":"public/images/recommend2.png"}
+          ],
+          "sec":[
+            {
+              "name":"Java企业级电商项目架构演进之路  Tomcat集群与Redis分布式",
+              "pic":"http://img1.sycdn.imooc.com/szimg/5a16336900014ca405400300-360-202.jpg",
+              "num":"高级 · 539人在学",
+              "price":"￥399.00"
+            },
+            {
+              "name":"Spring Boot企业微信点餐系统",
+              "pic":"//img1.sycdn.imooc.com/szimg/59eeb21c00012eb205400300-360-202.jpg",
+              "num":"中级 · 1512人在学",
+              "price":"￥3999.00"
+            },
+            {
+              "name":"Python+Django+Ansible Playbook自动化运维项目实战",
+              "pic":"//img1.sycdn.imooc.com/szimg/5a5334a50001d3dc05400300-360-202.jpg",
+              "num":"中级 · 76人在学",
+              "price":"￥588.00"
+            }
+          ],
+          "third":{
+            "name":"实战推荐","more":"更多实战","icon":"icon-shizhanpeixun"
+          }
         },
         {
-          "name":"Spring Boot企业微信点餐系统",
-          "pic":"//img1.sycdn.imooc.com/szimg/59eeb21c00012eb205400300-360-202.jpg",
-          "num":"中级 · 1512人在学",
-          "price":"￥3999.00"
-        },
-        {
-          "name":"Python+Django+Ansible Playbook自动化运维项目实战",
-          "pic":"//img1.sycdn.imooc.com/szimg/5a5334a50001d3dc05400300-360-202.jpg",
-          "num":"中级 · 76人在学",
-          "price":"￥588.00"
+          "first":[
+            {"name":"common.JS","desc":"Redux+React全栈开发","price":"388","pic":"public/images/recommend1.png"},
+            {"name":"nodejs","desc":"全网最热Python3入门+进阶","price":"366","pic":"public/images/recommend2.png"}
+          ],
+          "sec":[
+            {
+              "name":"Tomcat集群与Redis分布式",
+              "pic":"//climg.mukewang.com/5836c00a0001916906000338.jpg",
+              "num":"高级 · 2239人在学",
+              "price":"￥399.00"
+            },
+            {
+              "name":"Spring Boot",
+              "pic":"//climg.mukewang.com/5a405a7700010f1c06000338.jpg",
+              "num":"中级 · 11512人在学",
+              "price":"￥139.00"
+            },
+            {
+              "name":"Python+Django+Ansible Playbook",
+              "pic":"//img.mukewang.com/5a43337e0001160006000338-590-330.jpg",
+              "num":"中级 · 76人在学",
+              "price":"￥688.00"
+            }
+          ],
+          "third":{
+            "name":"新手指导","more":"更多课程","icon":"icon-web__xinshou"
+          }
         }
-      ]
-    },
+    ],
     "like":[
       {
         "name":"Spring Boot企业微信点餐系统",
         "pic":"//img1.sycdn.imooc.com/szimg/59eeb21c00012eb205400300-360-202.jpg",
         "num":"中级 · 1513人在学",
         "price":"￥398.00"
+      },
+      {
+        "name":"微信小程序入门与实战  常用组件API开发技巧项目实战",
+        "pic":"//img1.sycdn.imooc.com/szimg/583e42fb0001e04f05400300-360-202.jpg",
+        "num":"初级 · 9560人在学",
+        "price":"￥395.00"
+      },
+      {
+        "name":"Python人工智能推荐系统入门",
+        "pic":"//img1.mukewang.com/5a67eabc0001670506000338-590-330.jpg",
+        "num":"初级 · 605人在学",
+        "price":"免费"
+      },
+      {
+        "name":"微信小程序入门与实战  常用组件API开发技巧项目实战",
+        "pic":"//img1.sycdn.imooc.com/szimg/583e42fb0001e04f05400300-360-202.jpg",
+        "num":"初级 · 9560人在学",
+        "price":"￥395.00"
+      },
+      {
+        "name":"Python人工智能推荐系统入门",
+        "pic":"//img1.mukewang.com/5a67eabc0001670506000338-590-330.jpg",
+        "num":"初级 · 605人在学",
+        "price":"免费"
       },
       {
         "name":"微信小程序入门与实战  常用组件API开发技巧项目实战",

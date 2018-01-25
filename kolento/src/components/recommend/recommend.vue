@@ -2,27 +2,27 @@
     <div class="recommend">
         <div class="title clearfix">
             <div class="title-txt fl">
-                <i class="iconfont icon-play"></i>
-                <span>实战推荐</span>
+                <i class="iconfont b" :class="intro.icon"></i>
+                <span>{{intro.name}}</span>
             </div>
             <a href="" class="fr more">
-                更多实战
+                {{intro.more}}
                 <i class="icon-jiantou iconfont"></i>
             </a>
         </div>
         <div class="content">
             <ul class="main-con clearfix">
-                <li class="main-list fl" v-for="main in mains">
+                <li class="main-list fl" v-for="(main,index) in mains">
                     <a href="" class="block">
                         <h2>{{main.name}}</h2>
                         <p class="desc">{{main.desc}}</p>
-                        <p class="price">￥{{main.price}}</p>
+                        <p class="price">{{main.price}}</p>
                         <img class="pic pic1 vm" src="./recommend1.png" alt="">
                         <img class="pic pic2 vm" src="./recommend2.png" alt="">
                     </a>
                 </li>
             </ul>
-            <lesson></lesson>
+            <lesson :sort="st" :sec="sec" v-if='dis'></lesson>
         </div>
     </div>
 </template>
@@ -30,19 +30,28 @@
 <script>
     import lesson from '../lesson/lesson'
     export default{
+        props:["message"],
         data(){
             return{
-                mains:[]
+                mains:[],
+                intro:'',
+                sec:[{},{}],
+                st:this.message,
+                dis:false
             }
         },
         components:{
             lesson
         },
         created(){
-            this.$axios.get('/api/home').then((res)=>{
-                this.mains=res.data.data.main.recommend;
-                console.info(this.mains)
+            this.$axios.get('/api/home').then((res)=>{     
+                this.mains=res.data.data.intro[this.message].first
+                this.sec=res.data.data.intro[this.message].sec
+                this.intro=res.data.data.intro[this.message].third
+            }).then(()=>{
+                this.dis = true;
             })
+
         }
     }
 </script>
@@ -65,4 +74,5 @@
     .main-list h2{color:#fff;font-size: 3.4rem;}
     .desc {font-size: 2.2rem;color:#fff;}
     .price {font-size: 2.2rem;color:#fff;margin-top: 2rem;}
+    .iconfont {font-size: 3rem;color:#738BE5;}
 </style>
